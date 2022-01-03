@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./index.js"></script>
+    <style>
+      html {
+        padding: 0;
+      }
+      .container {
+        width: 200px;
+        height: 20px;
+        background-color: rgb(155, 39, 74);
+        position: relative;
+      }
+      .indicator {
+        width: 8px;
+        height: 20px;
+        background-color: rgba(90, 182, 199, 0.993);
+        transition-timing-function: linear;
+        position: absolute;
+        left: 0;
+      }
+      .slider {
+        width: 600px;
+      }
+      .block {
+        width: 50px;
+        height: 50px;
+        background-color: black;
+        /* margin: 16px; */
+        margin-right: 16px;
+        margin-left: 16px;
+        transition-duration: 100ms;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="indicator" id="indicator"></div>
+    </div>
+    <div>
+      <button onclick="delBeep()">-</button>
+      <button onclick="addBeep()">+</button>
+      <div>
+        <span id="bpm"> </span>
+        <input
+          type="range"
+          min="10"
+          max="300"
+          value="100"
+          class="slider"
+          id="myRange"
+          onchange="changeSpeed(this.value)"
+          oninput="changeSpeed(this.value)"
+        />
+      </div>
+      <div
+        style="
+          margin-top: 16px;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          height: 50px;
+        "
+        id="block-container"
+      ></div>
+      <span id="round-ind"></span>
+    </div>
+    <div>
+      <button onclick="start()">Start</button>
+      <button onclick="pause()">pause</button>
+    </div>
+  </body>
+  <script></script>
+  <script src="./anim.js"></script>
+</html>
